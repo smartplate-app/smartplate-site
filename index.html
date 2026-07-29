@@ -83,7 +83,7 @@ nav{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.95);backdrop-
 .clients{padding:40px 20px;text-align:center;background:var(--gray-bg)}
 .clients-title{font-size:16px;color:var(--gray-light);margin-bottom:24px;font-weight:600}
 .clients-grid{display:flex;flex-wrap:wrap;justify-content:center;gap:30px;align-items:center}
-.client-logo{width:120px;height:120px;object-fit:cover;border-radius:12px;box-shadow:0 2px 8px rgba(0,0,0,.08);transition:transform .2s}
+.client-logo{width:130px;height:130px;object-fit:contain;border-radius:12px;background:#fff;padding:8px;box-shadow:0 2px 8px rgba(0,0,0,.08);transition:transform .2s}
 .client-logo:hover{transform:scale(1.05)}
 
 section{padding:60px 20px}
@@ -179,6 +179,24 @@ footer{background:var(--black);color:var(--white);padding:40px 20px;margin-top:4
 .faq-item[open] .faq-q::after{content:"\2013"}
 .faq-a{padding:0 20px 16px;font-size:14px;color:var(--gray-text);line-height:1.6}
 
+
+/* Hamburger menu — pure CSS, no JS */
+.hamburger-toggle{display:none}
+.hamburger-btn{display:none;cursor:pointer;flex-direction:column;justify-content:center;gap:5px;width:44px;height:44px;padding:8px;z-index:300}
+.hamburger-btn span{display:block;width:24px;height:3px;background:#000;border-radius:2px;transition:all .3s ease}
+.hamburger-btn span:nth-child(1){margin-right:auto}
+.hamburger-btn span:nth-child(3){margin-right:auto}
+.mobile-sidebar{position:fixed;top:0;right:-300px;width:280px;height:100vh;background:#fff;box-shadow:-4px 0 20px rgba(0,0,0,.15);z-index:250;transition:right .3s ease;padding:80px 24px 24px;overflow-y:auto;display:flex;flex-direction:column;gap:8px}
+.mobile-sidebar a{font-size:16px;font-weight:600;padding:12px 0;border-bottom:1px solid #eee;color:#111}
+.mobile-sidebar a:hover{color:var(--teal)}
+.mobile-overlay{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.4);z-index:240;opacity:0;pointer-events:none;transition:opacity .3s ease}
+.hamburger-toggle:checked ~ .mobile-sidebar{right:0}
+.hamburger-toggle:checked ~ .mobile-overlay{opacity:1;pointer-events:auto}
+.hamburger-toggle:checked ~ label .hamburger-btn span:nth-child(1){transform:translateY(8px) rotate(45deg)}
+.hamburger-toggle:checked ~ label .hamburger-btn span:nth-child(2){opacity:0}
+.hamburger-toggle:checked ~ label .hamburger-btn span:nth-child(3){transform:translateY(-8px) rotate(-45deg)}
+.mobile-close{position:absolute;top:20px;left:20px;font-size:24px;cursor:pointer;color:#999;width:44px;height:44px;display:flex;align-items:center;justify-content:center}
+
 /* Area served */
 .area-served{background:var(--black);color:#fff;padding:30px;border-radius:12px;text-align:center;max-width:900px;margin:0 auto}
 .area-served h3{font-size:18px;margin-bottom:12px}
@@ -186,13 +204,18 @@ footer{background:var(--black);color:var(--white);padding:40px 20px;margin-top:4
 
 @media(max-width:768px){
   .nav-links{display:none}
+  .nav-cta .btn-green{display:none}
+  .hamburger-btn{display:flex}
   .hero-tagline{font-size:17px}
   .section-title{font-size:22px}
   .footer-inner{grid-template-columns:1fr;text-align:center}
   .stories-grid,.podcast-grid,.services-grid,.pricing-grid,.values-grid,.adv-grid{grid-template-columns:1fr}
-  .client-logo{width:90px;height:90px}
+  .client-logo{width:100px;height:100px;padding:6px}
   .hero-logo img{width:140px}
+  .clients-grid{gap:16px}
+  .mobile-sidebar{display:flex}
 }
+@media(min-width:769px){.hamburger-btn{display:none}.mobile-sidebar{display:none}.mobile-overlay{display:none}}
 </style>
 </head>
 <body>
@@ -216,6 +239,23 @@ footer{background:var(--black);color:var(--white);padding:40px 20px;margin-top:4
       <a href="https://wa.me/972525838483" class="btn btn-green">שלחו הודעה</a>
       <a href="tel:0525838483" class="btn btn-primary">התקשרו עכשיו</a>
     </div>
+    <!-- Hamburger (mobile only) -->
+    <input type="checkbox" id="hamburger" class="hamburger-toggle">
+    <label for="hamburger" class="hamburger-btn"><span></span><span></span><span></span></label>
+    <div class="mobile-overlay"></div>
+    <aside class="mobile-sidebar">
+      <label for="hamburger" class="mobile-close">✕</label>
+      <a href="#home">ראשי</a>
+      <a href="#success-stories">סיפורי הצלחה</a>
+      <a href="#services">שירותים</a>
+      <a href="#pricing">מסלולי ליווי</a>
+      <a href="#faq">שאלות נפוצות</a>
+      <a href="#contact">צור קשר</a>
+      <div style="margin-top:20px;display:flex;flex-direction:column;gap:10px">
+        <a href="https://wa.me/972525838483" class="btn btn-green" style="text-align:center">שלחו הודעה בווצאפ</a>
+        <a href="tel:0525838483" class="btn btn-primary" style="text-align:center">התקשרו עכשיו</a>
+      </div>
+    </aside>
   </div>
 </nav>
 
