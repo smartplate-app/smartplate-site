@@ -67,7 +67,7 @@ nav{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.95);backdrop-
 .nav-links{display:flex;gap:24px;align-items:center;flex-wrap:wrap}
 .nav-links a{font-size:14px;font-weight:600;transition:color .2s}
 .nav-links a:hover{color:var(--teal)}
-.nav-cta{display:flex;gap:10px}
+.nav-cta{display:none}
 .btn{display:inline-flex;align-items:center;gap:6px;padding:8px 18px;border-radius:8px;font-size:14px;font-weight:700;transition:all .2s;cursor:pointer;border:2px solid}
 .btn-primary{background:var(--black);color:var(--white);border-color:var(--black)}
 .btn-primary:hover{background:var(--teal);border-color:var(--teal)}
@@ -168,7 +168,7 @@ footer{background:var(--black);color:var(--white);padding:40px 20px;margin-top:4
 .floating-btn{width:56px;height:56px;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 12px rgba(0,0,0,.2);transition:transform .2s}
 .floating-btn:hover{transform:scale(1.1)}
 .floating-wa{background:#25D366}
-.floating-phone{background:var(--teal)}
+.floating-phone{background:var(--teal);display:none}
 
 /* FAQ */
 .faq-section{max-width:800px;margin:0 auto}
@@ -203,9 +203,9 @@ footer{background:var(--black);color:var(--white);padding:40px 20px;margin-top:4
 .area-served p{font-size:14px;color:#ccc;line-height:2}
 
 @media(max-width:768px){
-  .nav-links a:not(:first-child){display:none}
-  .nav-cta .btn-green{display:none}
-  .nav-cta .btn-primary{background:var(--teal);border-color:var(--teal)}
+  .nav-links a:not(:first-child){display:none
+.floating-phone{display:flex!important}
+}
   .hamburger-btn{display:flex}
   .hero-tagline{font-size:17px}
   .section-title{font-size:22px}
