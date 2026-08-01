@@ -84,8 +84,8 @@ nav{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.95);backdrop-
 
 .clients{padding:40px 20px;text-align:center;background:var(--gray-bg)}
 .clients-title{font-size:16px;color:var(--gray-light);margin-bottom:24px;font-weight:600}
-.clients-grid{display:flex;flex-wrap:wrap;justify-content:center;gap:30px;align-items:center}
-.client-logo{width:130px;height:130px;object-fit:contain;border-radius:12px;background:#fff;padding:8px;box-shadow:0 2px 8px rgba(0,0,0,.08);transition:transform .2s}
+.clients-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;justify-items:center;max-width:640px;margin:0 auto}
+.client-logo{width:100%;max-width:140px;height:auto;aspect-ratio:1;object-fit:contain;border-radius:12px;background:#fff;padding:10px;box-shadow:0 2px 8px rgba(0,0,0,.08);transition:transform .2s}
 .client-logo:hover{transform:scale(1.05)}
 
 section{padding:60px 20px}
@@ -915,7 +915,7 @@ footer{background:var(--black);color:var(--white);padding:40px 20px;margin-top:4
 <div class="clients">
   <div class="container">
     <p class="clients-title">כפי שיודעים מאות הלקוחות שלנו לאורך השנים</p>
-    <div class="clients-grid"><img src="img/client-gliss.png" alt="גליס" class="client-logo" loading="lazy"><img src="img/client-giraffe.jpeg" alt="GIRAFFE" class="client-logo" loading="lazy"><img src="img/client-undertree.jpg" alt="מתחת לעץ" class="client-logo" loading="lazy"><img src="img/client-billou.jpeg" alt="בילוי" class="client-logo" loading="lazy"><img src="img/client-benedict.jpeg" alt="Benedict" class="client-logo" loading="lazy"><img src="img/client-bahar6.png" alt="בהר6" class="client-logo" loading="lazy"><img src="img/client-bbb.png" alt="BBB" class="client-logo" loading="lazy"><img src="img/client-meshekbarzilay.jpg" alt="משק ברזילי" class="client-logo" loading="lazy"><img src="img/client-ninabianca.jpg" alt="Nina Bianca" class="client-logo" loading="lazy"><img src="img/client-bretonne.png" alt="ברטון קרפרי" class="client-logo" loading="lazy"><img src="img/client-aka.svg" alt="AKA" class="client-logo" loading="lazy"><img src="img/client-gastro.png" alt="גסטרום" class="client-logo" loading="lazy"><img src="img/client-kulialma.png" alt="כולי עלמא" class="client-logo" loading="lazy"></div>
+    <div class="clients-grid"><img src="img/client-gliss.png" alt="גליס" class="client-logo" loading="lazy"><img src="img/client-giraffe.jpeg" alt="GIRAFFE" class="client-logo" loading="lazy"><img src="img/client-undertree.jpg" alt="מתחת לעץ" class="client-logo" loading="lazy"><img src="img/client-billou.jpeg" alt="בילוי" class="client-logo" loading="lazy"><img src="img/client-benedict.jpeg" alt="Benedict" class="client-logo" loading="lazy"><img src="img/client-bahar6.png" alt="בהר6" class="client-logo" loading="lazy"><img src="img/client-bbb.png" alt="BBB" class="client-logo" loading="lazy"><img src="img/client-meshekbarzilay.jpg" alt="משק ברזילי" class="client-logo" loading="lazy"><img src="img/client-ninabianca.jpg" alt="Nina Bianca" class="client-logo" loading="lazy"><img src="img/client-bretonne.png" alt="ברטון קרפרי" class="client-logo" loading="lazy"><img src="img/client-aka.svg" alt="AKA" class="client-logo" loading="lazy"><img src="img/client-gastro.png" alt="גסטרום" class="client-logo" loading="lazy"><img src="img/client-kulialma.png" alt="כולי עלמא" class="client-logo" loading="lazy"><img src="img/client-eats.svg" alt="Eats" class="client-logo" loading="lazy"></div>
   </div>
 </div>
 
