@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>יועץ מסעדות | Smart Plate | Smart Plate</title>
+<meta name="description" content="מחפשים יועץ מסעדות? Smart Plate מספקת ליווי מקצועי לבעלי מסעדות ובתי קפה: רווחיות, תפעול, Food Cost, Labor Cost, תמחור והקמה.">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://smartplatebasic.com/restaurant-advisor/"><link rel="icon" type="image/jpeg" href="/img/logo.jpeg">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Service", "name": "יועץ מסעדות | Smart Plate", "serviceType": "יועץ מסעדות | Smart Plate", "provider": {"@type": "Organization", "name": "Smart Plate", "url": "https://smartplatebasic.com"}, "areaServed": {"@type": "Country", "name": "Israel"}, "url": "https://smartplatebasic.com/restaurant-advisor/", "description": "מחפשים יועץ מסעדות? Smart Plate מספקת ליווי מקצועי לבעלי מסעדות ובתי קפה: רווחיות, תפעול, Food Cost, Labor Cost, תמחור והקמה."}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "מה ההבדל בין ייעוץ למסעדות לייעוץ עסקי רגיל?", "acceptedAnswer": {"@type": "Answer", "text": "ייעוץ למסעדות חייב להבין את המורכבות של חומרי גלם, משמרות, פחת, תמחור מנות, שירות, מכירות ועומסי תפעול."}}, {"@type": "Question", "name": "האם הייעוץ מתאים גם לבית קפה או בר?", "acceptedAnswer": {"@type": "Answer", "text": "כן. השיטה מתאימה לעסקי מזון ומשקאות במודלים שונים, כולל בתי קפה, ברים, קונדיטוריות ומסעדות."}}]}</script>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--black:#000;--white:#fff;--teal:#0f766e;--gray-bg:#f9fafb;--gray-text:#555;--gray-light:#888;--border:#e5e7eb}
+body{font-family:'Segoe UI',system-ui,-apple-system,sans-serif;background:var(--white);color:#111827;line-height:1.6}
+img{max-width:100%;height:auto;display:block}
+a{color:inherit;text-decoration:none}
+.container{max-width:1200px;margin:0 auto;padding:0 20px}
+
+nav{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.95);backdrop-filter:blur(8px);border-bottom:1px solid var(--border);padding:12px 0}
+.nav-inner{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap}
+.nav-brand{display:flex;align-items:center;gap:10px}
+.nav-brand img{height:40px;width:auto}
+.nav-links{display:flex;gap:24px;align-items:center;flex-wrap:wrap}
+.nav-links a{font-size:14px;font-weight:600;transition:color .2s}
+.nav-links a:hover{color:var(--teal)}
+.nav-cta{display:none}
+.btn{display:inline-flex;align-items:center;gap:6px;padding:8px 18px;border-radius:8px;font-size:14px;font-weight:700;transition:all .2s;cursor:pointer;border:2px solid}
+.btn-primary{background:var(--black);color:var(--white);border-color:var(--black)}
+.btn-primary:hover{background:var(--teal);border-color:var(--teal)}
+.btn-green{background:#25D366;color:#fff;border-color:#25D366}
+.btn-green:hover{background:#1da851;border-color:#1da851}
+
+.hero{padding:60px 20px 40px;text-align:center}
+.hero-logo img{width:180px;margin:0 auto 30px}
+.hero-tagline{font-size:20px;max-width:800px;margin:0 auto 30px;font-weight:600;line-height:1.5}
+.hero-subtext{font-size:16px;color:#666;margin-bottom:30px}
+.hero-badge{display:inline-block;background:var(--black);color:var(--white);padding:8px 24px;border-radius:20px;font-size:14px;font-weight:700;margin-bottom:20px}
+
+.clients{padding:40px 20px;text-align:center;background:var(--gray-bg)}
+.clients-title{font-size:16px;color:var(--gray-light);margin-bottom:24px;font-weight:600}
+.clients-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;justify-items:center;max-width:640px;margin:0 auto}
+.client-logo{width:100%;max-width:140px;height:auto;aspect-ratio:1;object-fit:contain;border-radius:12px;background:#fff;padding:10px;box-shadow:0 2px 8px rgba(0,0,0,.08);transition:transform .2s}
+.client-logo:hover{transform:scale(1.05)}
+
+section{padding:60px 20px}
+.section-title{font-size:28px;font-weight:800;text-align:center;margin-bottom:8px}
+.section-subtitle{font-size:16px;color:#666;text-align:center;margin-bottom:8px}
+.section-intro{font-size:15px;color:var(--gray-light);text-align:center;max-width:600px;margin:0 auto 40px}
+
+.stories-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(350px,1fr));gap:24px}
+.story-card{background:var(--white);border:2px solid var(--black);box-shadow:4px 4px 0 var(--black);padding:24px;transition:transform .2s}
+.story-card:hover{transform:translate(-2px,-2px)}
+.story-year{display:inline-block;background:var(--teal);color:var(--white);padding:2px 12px;border-radius:12px;font-size:13px;font-weight:700;margin-bottom:12px}
+.story-title{font-size:18px;font-weight:800;margin-bottom:10px;line-height:1.3}
+.story-text{font-size:14px;color:#444;line-height:1.6}
+.story-tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px}
+.story-tag{background:#f0fdf4;color:var(--teal);padding:3px 10px;border-radius:10px;font-size:12px;font-weight:600;border:1px solid #bbf7d0}
+
+.podcast-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:24px}
+.podcast-card{background:var(--white);border:1px solid var(--border);border-radius:12px;padding:0;overflow:hidden;transition:all .2s}
+.podcast-card:hover{border-color:var(--teal);box-shadow:0 4px 12px rgba(0,0,0,.08)}
+.podcast-img{width:100%;aspect-ratio:1/1;object-fit:cover;display:block}
+.podcast-body{padding:16px}
+.podcast-date{font-size:13px;color:var(--gray-light);margin-bottom:8px}
+.podcast-title{font-size:16px;font-weight:700;margin-bottom:8px;line-height:1.4}
+.podcast-desc{font-size:13px;color:var(--gray-text);line-height:1.5}
+.podcast-play{display:inline-block;margin-top:10px;color:#fff;background:var(--teal);padding:8px 20px;border-radius:20px;font-size:13px;font-weight:700;transition:all .2s;text-decoration:none}.podcast-play:hover{background:#0d5d56;color:#fff}
+
+.services-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:20px}
+.service-card{background:var(--white);border:2px solid var(--black);box-shadow:3px 3px 0 var(--black);padding:20px;transition:transform .2s}
+.service-card:hover{transform:translate(-1px,-1px)}
+.service-title{font-size:16px;font-weight:800;margin-bottom:8px}
+.service-desc{font-size:13px;color:var(--gray-text);line-height:1.5}
+
+.pricing-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:24px}
+.price-card{background:var(--white);border:2px solid var(--black);box-shadow:4px 4px 0 var(--black);padding:28px;position:relative;transition:transform .2s}
+.price-card:hover{transform:translate(-2px,-2px)}
+.price-card.popular{border-color:var(--teal);box-shadow:4px 4px 0 var(--teal)}
+.price-badge{position:absolute;top:-12px;right:50%;transform:translateX(50%);background:var(--teal);color:var(--white);padding:3px 16px;border-radius:10px;font-size:12px;font-weight:700;white-space:nowrap}
+.price-name{font-size:18px;font-weight:800;margin-bottom:6px}
+.price-amount{font-size:22px;font-weight:800;color:var(--teal);margin-bottom:4px}
+.price-duration{font-size:13px;color:var(--gray-light);margin-bottom:16px}
+.price-features{list-style:none}
+.price-features li{font-size:13px;padding:4px 0;color:#444}
+.price-features li::before{content:"\2713 ";color:var(--teal);font-weight:700}
+
+.values-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:20px}
+.value-card{background:var(--gray-bg);border-left:4px solid var(--black);padding:20px;border-radius:0 8px 8px 0}
+.value-title{font-size:16px;font-weight:800;margin-bottom:8px}
+.value-desc{font-size:13px;color:var(--gray-text);line-height:1.5}
+
+.adv-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:20px}
+.adv-card{background:var(--white);border:2px solid var(--black);padding:20px}
+.adv-title{font-size:15px;font-weight:800;margin-bottom:8px}
+.adv-desc{font-size:13px;color:var(--gray-text);line-height:1.5}
+.stat-banner{text-align:center;margin-bottom:40px}
+.stat-number{font-size:48px;font-weight:900;color:var(--teal)}
+.stat-label{font-size:16px;color:#666;font-weight:600}
+
+.notfor-box{background:var(--white);border:2px dashed var(--black);padding:30px;border-radius:8px;max-width:600px;margin:0 auto}
+.notfor-list{list-style:none;margin-top:16px}
+.notfor-list li{padding:8px 0;font-size:15px}
+.notfor-list li::before{content:"\2717 ";color:#dc2627;font-weight:700;font-size:18px}
+
+.vision-box{background:var(--black);color:var(--white);padding:40px;border-radius:12px;text-align:center;max-width:800px;margin:0 auto}
+.vision-box h2{color:var(--white)}
+.vision-box .sub{color:#ccc;font-size:18px;margin-bottom:16px}
+
+.contact-box{text-align:center;max-width:600px;margin:0 auto}
+.contact-phones{display:flex;justify-content:center;gap:20px;margin:20px 0;flex-wrap:wrap}
+.contact-phone{font-size:20px;font-weight:800;color:var(--black)}
+.contact-email{font-size:18px;color:var(--teal);font-weight:600}
+.contact-cta{display:flex;justify-content:center;gap:12px;margin-top:24px;flex-wrap:wrap}
+
+footer{background:var(--black);color:var(--white);padding:40px 20px;margin-top:40px}
+.footer-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr 1fr;gap:30px}
+.footer-col h4{font-size:14px;font-weight:700;margin-bottom:12px;color:var(--white)}
+.footer-col a{display:block;font-size:13px;color:#999;margin-bottom:6px;transition:color .2s}
+.footer-col a:hover{color:var(--white)}
+.footer-logo{width:80px;margin-bottom:10px}
+@media(max-width:768px){.footer-col:not(:first-child){display:none}}
+.footer-bottom{text-align:center;padding:20px;border-top:1px solid #333;margin-top:30px;font-size:12px;color:#666}
+
+.floating{position:fixed;bottom:20px;left:20px;z-index:200;display:flex;flex-direction:column;gap:10px}
+.floating-btn{width:56px;height:56px;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 12px rgba(0,0,0,.2);transition:transform .2s}
+.floating-btn:hover{transform:scale(1.1)}
+.floating-wa{background:#25D366}
+.floating-phone{background:var(--teal);display:none}
+
+/* FAQ */
+.faq-section{max-width:800px;margin:0 auto}
+.faq-item{border:1px solid var(--border);border-radius:8px;margin-bottom:12px;overflow:hidden}
+.faq-q{padding:16px 20px;font-size:16px;font-weight:700;cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center}
+.faq-q::-webkit-details-marker{display:none}
+.faq-q::after{content:"+";font-size:20px;color:var(--teal)}
+.faq-item[open] .faq-q::after{content:"\2013"}
+.faq-a{padding:0 20px 16px;font-size:14px;color:var(--gray-text);line-height:1.6}
+
+
+/* Hamburger menu — pure CSS, no JS */
+.hamburger-toggle{display:none}
+.hamburger-btn{display:none;cursor:pointer;flex-direction:column;justify-content:center;gap:5px;width:44px;height:44px;padding:8px;z-index:300}
+.hamburger-btn span{display:block;width:24px;height:3px;background:#000;border-radius:2px;transition:all .3s ease}
+.hamburger-btn span:nth-child(1){margin-right:auto}
+.hamburger-btn span:nth-child(3){margin-right:auto}
+.mobile-sidebar{position:fixed;top:0;right:-300px;width:280px;height:100vh;background:#fff;box-shadow:-4px 0 20px rgba(0,0,0,.15);z-index:250;transition:right .3s ease;padding:80px 24px 24px;overflow-y:auto;display:flex;flex-direction:column;gap:8px}
+.mobile-sidebar a{font-size:16px;font-weight:600;padding:12px 0;border-bottom:1px solid #eee;color:#111}
+.mobile-sidebar a:hover{color:var(--teal)}
+.mobile-sidebar .btn-primary{color:var(--white)!important}
+.mobile-sidebar .btn-green{color:var(--white)!important}
+.mobile-overlay{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.4);z-index:240;opacity:0;pointer-events:none;transition:opacity .3s ease}
+.hamburger-toggle:checked ~ .mobile-sidebar{right:0}
+.hamburger-toggle:checked ~ .mobile-overlay{opacity:1;pointer-events:auto}
+.hamburger-toggle:checked ~ label .hamburger-btn span:nth-child(1){transform:translateY(8px) rotate(45deg)}
+.hamburger-toggle:checked ~ label .hamburger-btn span:nth-child(2){opacity:0}
+.hamburger-toggle:checked ~ label .hamburger-btn span:nth-child(3){transform:translateY(-8px) rotate(-45deg)}
+.mobile-close{position:absolute;top:20px;left:20px;font-size:24px;cursor:pointer;color:#999;width:44px;height:44px;display:flex;align-items:center;justify-content:center}
+
+/* Area served */
+.area-served{background:var(--black);color:#fff;padding:30px;border-radius:12px;text-align:center;max-width:900px;margin:0 auto}
+.area-served h3{font-size:18px;margin-bottom:12px}
+.area-served p{font-size:14px;color:#ccc;line-height:2}
+
+@media(max-width:768px){
+  .nav-links{display:none}
+  .floating-phone{display:flex!important}
+  .hamburger-btn{display:flex}
+  .hero-tagline{font-size:17px}
+  .section-title{font-size:22px}
+  .footer-inner{grid-template-columns:1fr;text-align:center}
+  .stories-grid,.podcast-grid,.services-grid,.pricing-grid,.values-grid,.adv-grid{grid-template-columns:1fr}
+  .clients-grid{grid-template-columns:repeat(2,1fr);gap:16px;max-width:280px}
+  .client-logo{width:100px;height:100px;padding:6px}
+  .hero-logo img{width:140px}
+  .mobile-sidebar{display:flex}
+}
+@media(min-width:769px){.hamburger-btn{display:none}.mobile-sidebar{display:none}.mobile-overlay{display:none}}
+
+
+
+.seo-page{max-width:900px;margin:0 auto;padding:64px 20px 80px}
+.seo-page .eyebrow{color:var(--teal);font-weight:800;font-size:15px;margin-bottom:12px}
+.seo-page h1{font-size:clamp(32px,5vw,58px);line-height:1.12;margin:0 0 22px}
+.seo-page .lead{font-size:20px;color:var(--gray-text);line-height:1.8;max-width:780px}
+.seo-page section{margin-top:48px}
+.seo-page h2{font-size:30px;margin-bottom:14px}
+.seo-page p,.seo-page li{font-size:18px;line-height:1.85;color:var(--gray-text)}
+.seo-page ul{padding-right:24px}
+.seo-page .cta-box{margin-top:52px;padding:28px;border-radius:14px;background:#f0fdfa;border:1px solid #99f6e4}
+.seo-page .cta-box h2{margin-top:0}
+.seo-page .btn{background:var(--teal);color:#fff;padding:12px 22px;border-radius:8px;display:inline-block;font-weight:800;margin-top:10px}
+.seo-page details{border-bottom:1px solid var(--border);padding:16px 0}
+.seo-page summary{cursor:pointer;font-weight:800;font-size:18px}
+.seo-page details p{margin:12px 0 0}
+@media(max-width:700px){.seo-page{padding-top:40px}.seo-page p,.seo-page li{font-size:17px}}
+</style>
+</head><body>
+<nav><div class="container nav-inner"><a class="nav-brand" href="/"><img src="/img/logo.jpeg" alt="Smart Plate Basic"></a><div class="nav-links"><a href="/">ראשי</a><a href="/restaurant-consulting/">ייעוץ למסעדות</a><a href="/restaurant-advisor/">יועץ מסעדות</a><a href="/food-labor-cost/">Food Cost ו-Labor Cost</a><a href="/#contact">צור קשר</a></div></div></nav>
+<main class="seo-page"><div class="eyebrow">יועץ מסעדות בישראל</div><h1>יועץ מסעדות עם ניסיון מעשי, מספרים ותוכנית עבודה</h1><p class="lead">יועץ מסעדות טוב צריך להבין גם את הרצפה, גם את המטבח וגם את דוח הרווח וההפסד. Smart Plate מחברת בין ניסיון בענף לבין שיטות עבודה מדידות, כדי לעזור לבעלים לקבל החלטות ברורות ולבנות עסק יציב ורווחי.</p><section><h2>מתי כדאי לעבוד עם יועץ מסעדות?</h2><p>כדאי להיעזר ביועץ לפני הקמה, בזמן ירידה ברווחיות, בעת שינוי קונספט, כשיש פער בין מחזור לרווח או כאשר התפעול תלוי מדי בבעלים.</p></section><section><h2>איך נראה תהליך הליווי?</h2><p>מתחילים באבחון של המצב הקיים, מגדירים מטרות ומדדים, בונים סדר עדיפויות ומלווים את היישום בפועל מול הבעלים והמנהלים.</p></section><section><h2>איזה תחומים אפשר לשפר?</h2><p>תמחור, הנדסת תפריט, Food Cost, Labor Cost, מלאי, שגרות ניהול, שירות, מכירות, תוכנית עסקית והחזר השקעה.</p></section><div class="cta-box"><h2>רוצים לבחון את העסק שלכם?</h2><p>Smart Plate מלווה מסעדות, בתי קפה ועסקי מזון בישראל בתהליך מעשי, מדיד וממוקד רווחיות.</p><a class="btn" href="/#contact">דברו איתנו</a></div><section><h2>שאלות נפוצות</h2><details><summary>מה ההבדל בין ייעוץ למסעדות לייעוץ עסקי רגיל?</summary><p>ייעוץ למסעדות חייב להבין את המורכבות של חומרי גלם, משמרות, פחת, תמחור מנות, שירות, מכירות ועומסי תפעול.</p></details><details><summary>האם הייעוץ מתאים גם לבית קפה או בר?</summary><p>כן. השיטה מתאימה לעסקי מזון ומשקאות במודלים שונים, כולל בתי קפה, ברים, קונדיטוריות ומסעדות.</p></details></section></main>
+<footer><div class="container"><p>© Smart Plate — ייעוץ עסקי ותפעולי למסעדות ובתי קפה</p><a href="/">חזרה לאתר הראשי</a></div></footer>
+</body></html>
