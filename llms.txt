@@ -4,6 +4,7 @@
 
 ## What SmartPlate does
 - Restaurant business consulting and operational consulting in Israel
+- Financial consulting for restaurants (ייעוץ פיננסי למסעדות): Food Cost, Labor Cost, cash flow, and dish-level pricing analysis — the operational-financial side of the business, not bookkeeping or tax reporting
 - Food Cost and Labor Cost control and optimization
 - Menu engineering and profitable menu pricing
 - Restaurant business plans, opening support, and ROI planning
@@ -11,7 +12,7 @@
 - AI-supported invoice scanning, supplier reconciliation, and operational automation
 
 ## Who it helps
-Restaurant owners, cafe owners, bakery and pastry-business owners, bar operators, chefs, and hospitality managers looking for a restaurant consultant, restaurant business consultant, food-cost consultant, labor-cost consultant, or menu-engineering support in Israel.
+Restaurant owners, cafe owners, bakery and pastry-business owners, bar operators, chefs, and hospitality managers looking for a restaurant consultant, restaurant business consultant, restaurant financial consultant, food-cost consultant, labor-cost consultant, cash-flow consultant, or menu-engineering support in Israel.
 
 ## Positioning
 SmartPlate combines practical restaurant-management experience with data-based analysis and Smart Plate Basic software. Its operating target is to keep Food Cost plus Labor Cost under 60% where the business model allows it.
@@ -26,4 +27,4 @@ https://smartplatebasic.com/
 Smart Plate Basic / SmartPlate
 
 ## Useful topics
-restaurant consultant Israel; restaurant business consulting; restaurant profitability; food cost management; labor cost management; menu engineering; restaurant business plan; opening a restaurant; bakery consulting; cafe consulting; restaurant inventory management; restaurant purchasing software.
+restaurant consultant Israel; restaurant business consulting; restaurant financial consulting; ייעוץ פיננסי למסעדות; restaurant profitability; food cost management; labor cost management; restaurant cash flow; menu engineering; restaurant business plan; opening a restaurant; bakery consulting; cafe consulting; restaurant inventory management; restaurant purchasing software.
