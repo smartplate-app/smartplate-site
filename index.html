@@ -115,6 +115,21 @@ section{padding:60px 20px}
 .services-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:20px}
 .service-card{background:var(--white);border:2px solid var(--black);box-shadow:3px 3px 0 var(--black);padding:20px;transition:transform .2s}
 .service-card:hover{transform:translate(-1px,-1px)}
+/* Clickable service cards — HTML/CSS only */
+.service-card{display:block;color:inherit;text-decoration:none;cursor:pointer;position:relative}
+.service-card::after{content:'לפרטים נוספים ←';display:block;margin-top:14px;color:var(--teal);font-size:13px;font-weight:700}
+.service-card:focus-visible{outline:3px solid var(--teal);outline-offset:4px}
+.service-modal{position:fixed;inset:0;z-index:1000;display:flex;align-items:center;justify-content:center;padding:20px;background:rgba(0,0,0,.62);opacity:0;visibility:hidden;pointer-events:none;transition:opacity .2s ease,visibility .2s ease}
+.service-modal:target{opacity:1;visibility:visible;pointer-events:auto}
+.service-modal-box{position:relative;width:min(720px,100%);max-height:88vh;overflow:auto;background:var(--white);border:2px solid var(--black);box-shadow:8px 8px 0 var(--black);padding:32px;text-align:right;direction:rtl}
+.service-modal-box h3{margin:0 0 16px;font-size:28px;line-height:1.25}
+.service-modal-box p{font-size:16px;line-height:1.85;margin:0 0 14px}
+.service-modal-box strong{font-weight:800}
+.service-modal-close{position:absolute;top:10px;left:14px;color:var(--black);font-size:28px;line-height:1;text-decoration:none;font-weight:700}
+.service-modal-close:focus-visible{outline:3px solid var(--teal);outline-offset:3px}
+.service-modal-cta{display:inline-block;margin-top:8px;background:var(--black);color:var(--white);padding:12px 20px;text-decoration:none;font-weight:700}
+@media(max-width:600px){.service-modal{padding:12px}.service-modal-box{padding:28px 20px 22px}.service-modal-box h3{font-size:23px}.service-modal-box p{font-size:15px}}
+
 .service-title{font-size:16px;font-weight:800;margin-bottom:8px}
 .service-desc{font-size:13px;color:var(--gray-text);line-height:1.5}
 
@@ -1076,39 +1091,31 @@ footer{background:var(--black);color:var(--white);padding:40px 20px;margin-top:4
   <div class="container">
     <h2 class="section-title">השירותים שלנו</h2>
     <p class="section-subtitle">ייעוץ עסקי מקיף למסעדות ובתי קפה - מהקמה ועד אופטימיזציה מתמדת</p>
-    <div class="services-grid" style="margin-top:40px"><div class="service-card">
-    <h3 class="service-title">ייעוץ עסקי למסעדות</h3>
-    <p class="service-desc">ליווי אסטרטגי מקיף לבעלי מסעדות - מהקמה ועד הצלחה מתמשכת</p>
-</div><div class="service-card">
-    <h3 class="service-title">הנדסת תפריט (Menu Engineering)</h3>
-    <p class="service-desc">בניית תפריט רווחי, עיצוב פסיכולוגי, ניתוח רווחיות מנות ומקסום הרווח מכל לקוח</p>
-</div><div class="service-card">
-    <h3 class="service-title">ייעוץ פיננסי למסעדות</h3>
-    <p class="service-desc">ניתוח כלכלי מעמיק, תזרים מזומנים ואופטימיזציה של רווחיות</p>
-</div><div class="service-card">
-    <h3 class="service-title">תוכנית עסקית למסעדה</h3>
-    <p class="service-desc">המומחים בישראל לבניית תוכנית עסקית למסעדה ולבית קפה. תכנון פיננסי, אסטרטגיה והחזר השקעה מובטח.</p>
-</div><div class="service-card">
-    <h3 class="service-title">ניהול Food Cost</h3>
-    <p class="service-desc">אופטימיזציה של עלויות מזון והפחתת בזבוז</p>
-</div><div class="service-card">
-    <h3 class="service-title">ניהול Labor Cost</h3>
-    <p class="service-desc">ייעול כוח אדם וניהול עלויות שכר</p>
-</div><div class="service-card">
-    <h3 class="service-title">החזר השקעה (ROI)</h3>
-    <p class="service-desc">מקסום תשואה על ההשקעה ושיפור רווחיות</p>
-</div><div class="service-card">
-    <h3 class="service-title">הדרכות מכירות</h3>
-    <p class="service-desc">הדרכות מקצועיות ומותאמות אישית לשיפור מכירות במסעדות וברים</p>
-</div><div class="service-card">
-    <h3 class="service-title">הדרכות שירות מתקדמות</h3>
-    <p class="service-desc">הדרכות שירות מותאמות אישית בהתאם לקונספט ולאיכות השירות המדויקים של העסק</p>
-</div><div class="service-card">
-    <h3 class="service-title">פיתוח ניהולי</h3>
-    <p class="service-desc">ליווי והדרכה אישית למנהלים במסעדות, ברים ובתי קפה כולל יצירת הגדרות התפקיד, הדרכות קבוצתיות למנהלים בתחומי הניהול השונים וליווי איש מקצועי להקניית ארגז הכלים הניהולי הנדרש לניהול העסק בהצלחה</p>
-</div></div>
+    <div class="services-grid" style="margin-top:40px">
+      <a class="service-card" href="#service-business" aria-label="פרטים על ייעוץ עסקי למסעדות"><h3 class="service-title">ייעוץ עסקי למסעדות</h3><p class="service-desc">ליווי אסטרטגי מקיף לבעלי מסעדות - מהקמה ועד הצלחה מתמשכת</p></a>
+      <a class="service-card" href="#service-menu" aria-label="פרטים על הנדסת תפריט"><h3 class="service-title">הנדסת תפריט (Menu Engineering)</h3><p class="service-desc">בניית תפריט רווחי, עיצוב פסיכולוגי, ניתוח רווחיות מנות ומקסום הרווח מכל לקוח</p></a>
+      <a class="service-card" href="#service-finance" aria-label="פרטים על ייעוץ פיננסי למסעדות"><h3 class="service-title">ייעוץ פיננסי למסעדות</h3><p class="service-desc">ניתוח כלכלי מעמיק, תזרים מזומנים ואופטימיזציה של רווחיות</p></a>
+      <a class="service-card" href="#service-plan" aria-label="פרטים על תוכנית עסקית למסעדה"><h3 class="service-title">תוכנית עסקית למסעדה</h3><p class="service-desc">תכנון פיננסי ואסטרטגי לפני ההשקעה, עם בדיקת דרך להחזר השקעה בתוך שנתיים או פחות</p></a>
+      <a class="service-card" href="#service-food" aria-label="פרטים על ניהול Food Cost"><h3 class="service-title">ניהול Food Cost</h3><p class="service-desc">אופטימיזציה של עלויות מזון והפחתת בזבוז</p></a>
+      <a class="service-card" href="#service-labor" aria-label="פרטים על ניהול Labor Cost"><h3 class="service-title">ניהול Labor Cost</h3><p class="service-desc">ייעול כוח אדם וניהול עלויות שכר</p></a>
+      <a class="service-card" href="#service-roi" aria-label="פרטים על החזר השקעה"><h3 class="service-title">החזר השקעה (ROI)</h3><p class="service-desc">מקסום תשואה על ההשקעה ושיפור רווחיות</p></a>
+      <a class="service-card" href="#service-sales" aria-label="פרטים על הדרכות מכירות"><h3 class="service-title">הדרכות מכירות</h3><p class="service-desc">הדרכות מקצועיות ומותאמות אישית לשיפור מכירות במסעדות וברים</p></a>
+      <a class="service-card" href="#service-service" aria-label="פרטים על הדרכות שירות מתקדמות"><h3 class="service-title">הדרכות שירות מתקדמות</h3><p class="service-desc">הדרכות שירות מותאמות אישית בהתאם לקונספט ולאיכות השירות המדויקים של העסק</p></a>
+      <a class="service-card" href="#service-management" aria-label="פרטים על פיתוח ניהולי"><h3 class="service-title">פיתוח ניהולי</h3><p class="service-desc">ליווי והדרכה אישית למנהלים במסעדות, ברים ובתי קפה</p></a>
+    </div>
   </div>
 </section>
+
+<div id="service-business" class="service-modal"><div class="service-modal-box"><a class="service-modal-close" href="#services" aria-label="סגירת חלון">×</a><h3>ייעוץ עסקי למסעדות</h3><p>ליווי מקצועי לבעלי מסעדות, בתי קפה וברים משלב הרעיון וההקמה ועד לניהול שוטף וצמיחה. אנחנו בוחנים את המודל העסקי, הקונספט, קהל היעד, התמחור, כוח האדם, התפעול והרווחיות — ומתרגמים את הממצאים לתוכנית עבודה מעשית.</p><p><strong>למה זה חשוב?</strong> מסעדה יכולה להיות עמוסה ועדיין להפסיד כסף. ייעוץ נכון מחבר בין הפעילות היומיומית לבין המספרים שקובעים אם העסק מצליח.</p><a class="service-modal-cta" href="#contact">בואו נדבר</a></div></div>
+<div id="service-menu" class="service-modal"><div class="service-modal-box"><a class="service-modal-close" href="#services" aria-label="סגירת חלון">×</a><h3>הנדסת תפריט</h3><p>ניתוח כל מנה לפי פופולריות, מחיר מכירה, עלות חומרי גלם, רווח גולמי ותרומה לרווח. לאחר מכן בונים תפריט שקל לבחור ממנו ומכוון את המכירות למנות הרווחיות ביותר.</p><p><strong>למה זה חשוב?</strong> לא מספיק למכור הרבה — צריך למכור את המנות שמייצרות את התרומה הטובה ביותר לעסק.</p><a class="service-modal-cta" href="#contact">בואו נדבר</a></div></div>
+<div id="service-finance" class="service-modal"><div class="service-modal-box"><a class="service-modal-close" href="#services" aria-label="סגירת חלון">×</a><h3>ייעוץ פיננסי למסעדות</h3><p>תמונת מצב כלכלית מלאה: מכירות, עלויות, תזרים, נקודת איזון, רווח גולמי, רווח תפעולי, התחייבויות ותרחישים. אנחנו בונים מודל שמאפשר לקבל החלטות לפני שהבעיה הופכת למשבר.</p><p><strong>למה זה חשוב?</strong> תזרים ורווח הם לא אותו דבר. ניהול פיננסי מסודר מונע הפתעות ומאפשר לתכנן צמיחה בביטחון.</p><a class="service-modal-cta" href="#contact">בואו נדבר</a></div></div>
+<div id="service-plan" class="service-modal"><div class="service-modal-box"><a class="service-modal-close" href="#services" aria-label="סגירת חלון">×</a><h3>תוכנית עסקית למסעדה ולבית קפה</h3><p>תוכנית עסקית היא מפת הדרך לפני שמוציאים כסף — לא מסמך תיאורטי לבנק בלבד. אנחנו מגדירים קונספט, קהל יעד, מיקום, תמהיל מכירות, ממוצע לסועד, מחירים, Food Cost, Labor Cost, שכירות, הוצאות קבועות והשקעה ראשונית.</p><p>לאחר מכן בונים תחזית חודשית של הכנסות, הוצאות, תזרים ונקודת איזון ובוחנים תרחיש שמרני, סביר ואופטימי.</p><p><strong>כבר על הנייר צריך לתכנן איך מחזירים את ההשקעה בתוך שנתיים או פחות.</strong> מחשבים את ההשקעה הכוללת, את הרווח התפעולי החודשי ואת קצב הצמיחה הדרוש. אם אין דרך הגיונית להחזר השקעה בתוך 24 חודשים, עוצרים ומשנים את הקונספט, התקציב, המחירים או ההוצאות — לפני חתימת חוזה, שיפוץ והוצאה של ההון.</p><p><strong>למה זה חשוב?</strong> עדיף לגלות שהמודל לא עובד לפני שמשקיעים, ולא אחרי שהכסף כבר יצא.</p><a class="service-modal-cta" href="#contact">רוצים לבדוק החזר השקעה? צרו קשר</a></div></div>
+<div id="service-food" class="service-modal"><div class="service-modal-box"><a class="service-modal-close" href="#services" aria-label="סגירת חלון">×</a><h3>ניהול Food Cost</h3><p>בקרה על מתכונים, מחירי קנייה, קבלת סחורה, מלאי, פחת, בזבוז ופערים בין עלות תיאורטית לעלות בפועל. מטמיעים תהליכי עבודה ומדידה שמאפשרים לאתר דליפות בזמן.</p><p><strong>למה זה חשוב?</strong> גם סטייה קטנה באחוז Food Cost מצטברת לעשרות אלפי שקלים בשנה.</p><a class="service-modal-cta" href="#contact">בואו נדבר</a></div></div>
+<div id="service-labor" class="service-modal"><div class="service-modal-box"><a class="service-modal-close" href="#services" aria-label="סגירת חלון">×</a><h3>ניהול Labor Cost</h3><p>תכנון כוח האדם לפי תחזית מכירות, בניית תקציב שעות, סידור עבודה, הגדרות תפקיד, מדידת תפוקה ובקרה על עלות מעסיק.</p><p><strong>למה זה חשוב?</strong> ניהול לפי נתונים משפר רווחיות בלי לפגוע באיכות השירות.</p><a class="service-modal-cta" href="#contact">בואו נדבר</a></div></div>
+<div id="service-roi" class="service-modal"><div class="service-modal-box"><a class="service-modal-close" href="#services" aria-label="סגירת חלון">×</a><h3>החזר השקעה (ROI)</h3><p>חיבור בין כל החלטה עסקית לבין השאלה כמה כסף היא מחזירה ומתי. בודקים השקעות בציוד, שיפוץ, שיווק, עובדים, משלוחים וטכנולוגיה לפי עלות, תועלת, סיכון וזמן החזר.</p><p><strong>למה זה חשוב?</strong> השקעה טובה צריכה להחזיר את עצמה בזמן סביר ולשפר את הרווח לאורך זמן.</p><a class="service-modal-cta" href="#contact">בואו נדבר</a></div></div>
+<div id="service-sales" class="service-modal"><div class="service-modal-box"><a class="service-modal-close" href="#services" aria-label="סגירת חלון">×</a><h3>הדרכות מכירות</h3><p>הכשרת צוותים ומנהלים להגדלת ממוצע לסועד, מכירת תוספות, קינוחים ומשקאות והצגת מנות בצורה נכונה — בלי לחץ ובלי לפגוע בחוויית האורח.</p><p><strong>למה זה חשוב?</strong> שיפור קטן בממוצע העסקה, כשהוא מוכפל בכל יום ובכל סועד, הופך לרווח משמעותי.</p><a class="service-modal-cta" href="#contact">בואו נדבר</a></div></div>
+<div id="service-service" class="service-modal"><div class="service-modal-box"><a class="service-modal-close" href="#services" aria-label="סגירת חלון">×</a><h3>הדרכות שירות מתקדמות</h3><p>בניית סטנדרט שירות שמתאים לקונספט של העסק — מהקשר הראשון ועד סיום הארוחה. כולל שפת שירות, טיפול בתקלות, ניהול תלונות, תקשורת בין צוותים ומדידת איכות.</p><p><strong>למה זה חשוב?</strong> שירות עקבי מגדיל נאמנות, ביקורות חיוביות, חזרת לקוחות והכנסה לסועד.</p><a class="service-modal-cta" href="#contact">בואו נדבר</a></div></div>
+<div id="service-management" class="service-modal"><div class="service-modal-box"><a class="service-modal-close" href="#services" aria-label="סגירת חלון">×</a><h3>פיתוח ניהולי</h3><p>ליווי מנהלים ובעלי תפקידים בבניית ארגז כלים ניהולי: הגדרות תפקיד, ניהול משמרת, משוב, חניכה, יעדים, בונוסים לפי תוצאות ותקשורת צוותית.</p><p><strong>למה זה חשוב?</strong> עסק לא יכול לגדול אם כל החלטה חייבת לעבור דרך הבעלים. מנהלים חזקים יוצרים יציבות, אחריות ורווחיות.</p><a class="service-modal-cta" href="#contact">בואו נדבר</a></div></div>
 
 <!-- AREA SERVED -->
 <section id="area-served">
