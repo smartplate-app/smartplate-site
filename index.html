@@ -12,64 +12,86 @@
 <link rel="dns-prefetch" href="https://app.foodcostapp.com">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-:root{--black:#000;--white:#fff;--teal:#0f766e;--teal-light:#2dd4bf;--gray-text:#666;--border:#e5e7eb}
+:root{
+  --teal:#2dd4bf;--teal-dim:rgba(45,212,191,.18);
+  --card-bg:#12151c;--choice-bg:#171c26;--choice-bg-hover:#1c2330;
+  --border:#2a313f;--text:#f3f4f6;--text-muted:#8d97a8;--red:#f87171;
+}
 html,body{height:100%}
 body{
   font-family:'Segoe UI',system-ui,-apple-system,sans-serif;
-  color:#111827;line-height:1.6;min-height:100vh;
+  color:var(--text);line-height:1.6;min-height:100vh;
   display:flex;align-items:center;justify-content:center;padding:24px;
   direction:rtl;text-align:right;
-  background:radial-gradient(circle at 50% 0%, #1f2a3d 0%, #0b1220 60%, #05070c 100%);
-  position:relative;
-}
-/* dim/backdrop feel behind the floating popup */
-body::before{
-  content:"";position:fixed;inset:0;
-  background:rgba(0,0,0,.35);
-  backdrop-filter:blur(2px);
-  z-index:0;
+  background:radial-gradient(circle at 50% 0%, #1a2130 0%, #0a0e17 55%, #04060a 100%);
 }
 
-.popup-overlay{position:relative;z-index:1;max-width:780px;width:100%}
+.popup-overlay{position:relative;z-index:1;max-width:900px;width:100%}
 .popup-card{
-  background:var(--white);border-radius:22px;
-  box-shadow:0 30px 80px rgba(0,0,0,.45), 0 0 0 1px rgba(0,0,0,.04);
-  padding:44px 40px;text-align:right;direction:rtl;
+  background:var(--card-bg);border:1px solid var(--border);border-radius:24px;
+  box-shadow:0 30px 90px rgba(0,0,0,.6), 0 0 0 1px rgba(255,255,255,.02);
+  padding:48px 44px;text-align:right;direction:rtl;
   animation:pop-in .25s ease-out;
 }
 @keyframes pop-in{from{opacity:0;transform:translateY(10px) scale(.98)}to{opacity:1;transform:translateY(0) scale(1)}}
 
 .logo{text-align:center;margin-bottom:20px}
-.logo img{height:72px;width:72px;border-radius:14px;display:inline-block;box-shadow:0 6px 18px rgba(0,0,0,.18)}
-h1{text-align:center;font-size:26px;font-weight:800;color:#111827;margin-bottom:10px;direction:rtl}
-.sub{text-align:center;color:var(--gray-text);font-size:15px;margin-bottom:34px;direction:rtl}
+.logo img{height:78px;width:78px;border-radius:16px;display:inline-block;box-shadow:0 8px 24px rgba(0,0,0,.5);border:1px solid var(--border)}
+h1{text-align:center;font-size:28px;font-weight:800;color:var(--text);margin-bottom:10px;direction:rtl}
+.sub{text-align:center;color:var(--text-muted);font-size:15px;margin-bottom:36px;direction:rtl}
 
-.choices{display:grid;grid-template-columns:1fr 1fr;gap:20px}
-@media (max-width:640px){.choices{grid-template-columns:1fr}.popup-card{padding:32px 22px}}
+.choices{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+@media (max-width:700px){.choices{grid-template-columns:1fr}.popup-card{padding:32px 22px}}
 
 .choice{
-  position:relative;overflow:hidden;
-  display:block;background:#fafafa;border:2px solid var(--border);border-radius:16px;
-  padding:28px 22px;text-decoration:none;color:inherit;transition:all .2s;
+  position:relative;overflow:hidden;min-height:340px;
+  display:flex;flex-direction:column;
+  background:var(--choice-bg);border:2px solid var(--border);border-radius:18px;
+  padding:26px 24px;text-decoration:none;color:inherit;transition:all .2s;
   text-align:right;direction:rtl;
 }
-.choice:hover{border-color:var(--teal);box-shadow:0 8px 24px rgba(15,118,110,.15);transform:translateY(-2px)}
+.choice:hover{border-color:var(--teal);background:var(--choice-bg-hover);box-shadow:0 12px 32px rgba(45,212,191,.15);transform:translateY(-3px)}
 
 .watermark{
-  position:absolute;bottom:-18px;left:-18px;
-  width:120px;height:120px;object-fit:contain;
-  opacity:.07;pointer-events:none;transform:rotate(-8deg);z-index:0;
+  position:absolute;bottom:-14px;left:-14px;
+  width:110px;height:110px;object-fit:contain;border-radius:14px;
+  opacity:.06;pointer-events:none;transform:rotate(-8deg);z-index:0;
 }
 
-.choice-icon{position:relative;z-index:1;width:52px;height:52px;border-radius:12px;background:#fff;border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:24px;margin-bottom:18px;margin-right:0;margin-left:auto}
-.choice.consulting .choice-icon{color:var(--teal)}
-.choice.app .choice-icon{color:#111827}
-.choice h2{position:relative;z-index:1;font-size:17px;font-weight:800;margin-bottom:8px;text-align:right;direction:rtl}
-.choice p{position:relative;z-index:1;font-size:14px;color:var(--gray-text);margin-bottom:16px;text-align:right;direction:rtl}
-.choice .go{position:relative;z-index:1;display:inline-flex;align-items:center;gap:6px;font-size:14px;font-weight:700;color:var(--teal)}
-.choice.app .go{color:#111827}
+/* --- big animated visual --- */
+.visual{position:relative;z-index:1;width:100%;height:160px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin-bottom:16px}
+.chart-svg{width:100%;height:120px;overflow:visible}
 
-footer{text-align:center;margin-top:28px;font-size:12px;color:#9ca3af;direction:rtl}
+/* Prime Cost bar chart animation */
+.bar{fill:var(--teal);transform-box:fill-box;transform-origin:bottom;animation:barPulse 2.2s ease-in-out infinite}
+.bar2{animation-delay:.18s}
+.bar3{animation-delay:.36s}
+.bar4{animation-delay:.54s}
+.bar5{animation-delay:.72s}
+@keyframes barPulse{0%,100%{transform:scaleY(.65)}50%{transform:scaleY(1)}}
+.target-line{stroke:var(--red);stroke-width:2;stroke-dasharray:6 5;opacity:.85}
+.target-label{fill:var(--red);font-size:13px;font-weight:800}
+
+/* Growth chart animation */
+.growth-line{fill:none;stroke:var(--teal);stroke-width:3.5;stroke-linecap:round;stroke-dasharray:300;stroke-dashoffset:300;animation:drawLine 2.8s ease-in-out infinite}
+@keyframes drawLine{0%{stroke-dashoffset:300;opacity:.35}60%{stroke-dashoffset:0;opacity:1}100%{stroke-dashoffset:0;opacity:.35}}
+.dot{fill:var(--teal);transform-box:fill-box;transform-origin:center;animation:dotPulse 2.8s ease-in-out infinite}
+.dot2{animation-delay:.22s}
+.dot3{animation-delay:.44s}
+.dot4{animation-delay:.66s}
+.dot5{animation-delay:.88s}
+@keyframes dotPulse{0%,100%{opacity:.15;transform:scale(.55)}50%{opacity:1;transform:scale(1.35)}}
+.arrow{fill:var(--teal);transform-box:fill-box;transform-origin:center;animation:arrowBounce 1.5s ease-in-out infinite}
+@keyframes arrowBounce{0%,100%{transform:translateY(0)}50%{transform:translateY(-5px)}}
+
+.visual-caption{position:relative;z-index:1;font-size:13px;color:var(--text-muted);font-weight:800;letter-spacing:.3px}
+.visual-caption span{color:var(--teal)}
+
+.choice h2{position:relative;z-index:1;font-size:18px;font-weight:800;margin-bottom:8px;text-align:right;direction:rtl;color:var(--text)}
+.choice p{position:relative;z-index:1;font-size:14px;color:var(--text-muted);margin-bottom:14px;text-align:right;direction:rtl;flex:1}
+.choice .go{position:relative;z-index:1;display:inline-flex;align-items:center;gap:6px;font-size:14px;font-weight:800;color:var(--teal)}
+
+footer{text-align:center;margin-top:30px;font-size:12px;color:#5a6474;direction:rtl}
 </style>
 </head>
 <body>
@@ -80,21 +102,45 @@ footer{text-align:center;margin-top:28px;font-size:12px;color:#9ca3af;direction:
     <p class="sub">במה תרצו להמשיך?</p>
 
     <div class="choices">
+
+      <a class="choice app" href="https://app.foodcostapp.com">
+        <img class="watermark" src="img/logo-basic.png" alt="">
+        <div class="visual">
+          <svg viewBox="0 0 200 130" class="chart-svg" preserveAspectRatio="xMidYMid meet">
+            <line x1="8" y1="46" x2="192" y2="46" class="target-line"/>
+            <text x="192" y="38" class="target-label" text-anchor="end">60%</text>
+            <rect class="bar bar1" x="18" y="70" width="24" height="52"/>
+            <rect class="bar bar2" x="55" y="55" width="24" height="67"/>
+            <rect class="bar bar3" x="92" y="38" width="24" height="84"/>
+            <rect class="bar bar4" x="129" y="58" width="24" height="64"/>
+            <rect class="bar bar5" x="166" y="34" width="24" height="88"/>
+          </svg>
+          <div class="visual-caption">Prime Cost <span>&lt; 60%</span></div>
+        </div>
+        <h2>המשך לאפליקציית Smart Plate Basic</h2>
+        <p>כניסה למשרד האחורי — ניהול עלויות מזון, שכר, מלאי וספקים.</p>
+        <span class="go">כניסה לאפליקציה ←</span>
+      </a>
+
       <a class="choice consulting" href="/consulting-services.html">
         <img class="watermark" src="img/logo-basic.png" alt="">
-        <div class="choice-icon">💼</div>
+        <div class="visual">
+          <svg viewBox="0 0 200 130" class="chart-svg" preserveAspectRatio="xMidYMid meet">
+            <polyline points="10,112 52,90 94,96 136,55 178,28" class="growth-line"/>
+            <circle class="dot dot1" cx="10" cy="112" r="5.5"/>
+            <circle class="dot dot2" cx="52" cy="90" r="5.5"/>
+            <circle class="dot dot3" cx="94" cy="96" r="5.5"/>
+            <circle class="dot dot4" cx="136" cy="55" r="5.5"/>
+            <circle class="dot dot5" cx="178" cy="28" r="5.5"/>
+            <polygon class="arrow" points="178,28 187,41 169,41"/>
+          </svg>
+          <div class="visual-caption">Growth <span>↑</span></div>
+        </div>
         <h2>אני מעוניין בשירותי ייעוץ עסקי למסעדנים</h2>
         <p>ייעוץ עסקי ותפעולי למסעדות ובתי קפה — Food Cost, Labor Cost, הנדסת תפריט ועוד.</p>
         <span class="go">המשך לעמוד השירותים ←</span>
       </a>
 
-      <a class="choice app" href="https://app.foodcostapp.com">
-        <img class="watermark" src="img/logo-basic.png" alt="">
-        <div class="choice-icon">📊</div>
-        <h2>המשך לאפליקציית Smart Plate Basic</h2>
-        <p>כניסה למשרד האחורי — ניהול עלויות מזון, שכר, מלאי וספקים.</p>
-        <span class="go">כניסה לאפליקציה ←</span>
-      </a>
     </div>
 
     <footer>SmartPlate © 2026</footer>
