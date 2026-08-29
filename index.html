@@ -7,57 +7,98 @@
 <meta name="description" content="SmartPlate — בחרו אם אתם מעוניינים בשירותי ייעוץ עסקי למסעדנים או להמשיך לאפליקציית Smart Plate Basic.">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://smartplatebasic.com/">
-<link rel="icon" type="image/jpeg" href="img/logo.jpeg">
+<link rel="icon" type="image/png" href="img/logo-basic.png">
 <link rel="preconnect" href="https://app.foodcostapp.com" crossorigin>
 <link rel="dns-prefetch" href="https://app.foodcostapp.com">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-:root{--black:#000;--white:#fff;--teal:#0f766e;--teal-light:#2dd4bf;--gray-bg:#f3f4f6;--gray-text:#555;--border:#e5e7eb}
-body{font-family:'Segoe UI',system-ui,-apple-system,sans-serif;background:var(--gray-bg);color:#111827;line-height:1.6;min-height:100vh;display:flex;align-items:center;justify-content:center;padding:24px;direction:rtl;text-align:right}
+:root{--black:#000;--white:#fff;--teal:#0f766e;--teal-light:#2dd4bf;--gray-text:#666;--border:#e5e7eb}
+html,body{height:100%}
+body{
+  font-family:'Segoe UI',system-ui,-apple-system,sans-serif;
+  color:#111827;line-height:1.6;min-height:100vh;
+  display:flex;align-items:center;justify-content:center;padding:24px;
+  direction:rtl;text-align:right;
+  background:radial-gradient(circle at 50% 0%, #1f2a3d 0%, #0b1220 60%, #05070c 100%);
+  position:relative;
+}
+/* dim/backdrop feel behind the floating popup */
+body::before{
+  content:"";position:fixed;inset:0;
+  background:rgba(0,0,0,.35);
+  backdrop-filter:blur(2px);
+  z-index:0;
+}
 
-.popup-card{max-width:780px;width:100%;background:var(--white);border-radius:20px;box-shadow:0 20px 60px rgba(0,0,0,.15);padding:44px 40px;text-align:right;direction:rtl;border:1px solid var(--border)}
+.popup-overlay{position:relative;z-index:1;max-width:780px;width:100%}
+.popup-card{
+  background:var(--white);border-radius:22px;
+  box-shadow:0 30px 80px rgba(0,0,0,.45), 0 0 0 1px rgba(0,0,0,.04);
+  padding:44px 40px;text-align:right;direction:rtl;
+  animation:pop-in .25s ease-out;
+}
+@keyframes pop-in{from{opacity:0;transform:translateY(10px) scale(.98)}to{opacity:1;transform:translateY(0) scale(1)}}
 
-.logo{text-align:center;margin-bottom:22px}
-.logo img{height:60px;width:auto;display:inline-block;border-radius:10px}
+.logo{text-align:center;margin-bottom:20px}
+.logo img{height:72px;width:72px;border-radius:14px;display:inline-block;box-shadow:0 6px 18px rgba(0,0,0,.18)}
 h1{text-align:center;font-size:26px;font-weight:800;color:#111827;margin-bottom:10px;direction:rtl}
 .sub{text-align:center;color:var(--gray-text);font-size:15px;margin-bottom:34px;direction:rtl}
+
 .choices{display:grid;grid-template-columns:1fr 1fr;gap:20px}
 @media (max-width:640px){.choices{grid-template-columns:1fr}.popup-card{padding:32px 22px}}
-.choice{display:block;background:var(--white);border:2px solid var(--border);border-radius:16px;padding:28px 22px;text-decoration:none;color:inherit;transition:all .2s;text-align:right;direction:rtl}
-.choice:hover{border-color:var(--teal);box-shadow:0 8px 24px rgba(15,118,110,.12);transform:translateY(-2px)}
-.choice-icon{width:52px;height:52px;border-radius:12px;background:var(--gray-bg);display:flex;align-items:center;justify-content:center;font-size:24px;margin-bottom:18px;margin-right:0;margin-left:auto}
-.choice.consulting .choice-icon{background:#f0fdfa;color:var(--teal)}
-.choice.app .choice-icon{background:#f3f4f6;color:#111827}
-.choice h2{font-size:17px;font-weight:800;margin-bottom:8px;text-align:right;direction:rtl}
-.choice p{font-size:14px;color:var(--gray-text);margin-bottom:16px;text-align:right;direction:rtl}
-.choice .go{display:inline-flex;align-items:center;gap:6px;font-size:14px;font-weight:700;color:var(--teal)}
+
+.choice{
+  position:relative;overflow:hidden;
+  display:block;background:#fafafa;border:2px solid var(--border);border-radius:16px;
+  padding:28px 22px;text-decoration:none;color:inherit;transition:all .2s;
+  text-align:right;direction:rtl;
+}
+.choice:hover{border-color:var(--teal);box-shadow:0 8px 24px rgba(15,118,110,.15);transform:translateY(-2px)}
+
+.watermark{
+  position:absolute;bottom:-18px;left:-18px;
+  width:120px;height:120px;object-fit:contain;
+  opacity:.07;pointer-events:none;transform:rotate(-8deg);z-index:0;
+}
+
+.choice-icon{position:relative;z-index:1;width:52px;height:52px;border-radius:12px;background:#fff;border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:24px;margin-bottom:18px;margin-right:0;margin-left:auto}
+.choice.consulting .choice-icon{color:var(--teal)}
+.choice.app .choice-icon{color:#111827}
+.choice h2{position:relative;z-index:1;font-size:17px;font-weight:800;margin-bottom:8px;text-align:right;direction:rtl}
+.choice p{position:relative;z-index:1;font-size:14px;color:var(--gray-text);margin-bottom:16px;text-align:right;direction:rtl}
+.choice .go{position:relative;z-index:1;display:inline-flex;align-items:center;gap:6px;font-size:14px;font-weight:700;color:var(--teal)}
 .choice.app .go{color:#111827}
+
 footer{text-align:center;margin-top:28px;font-size:12px;color:#9ca3af;direction:rtl}
 </style>
 </head>
 <body>
-<div class="popup-card">
-  <div class="logo"><img src="img/logo.jpeg" alt="SmartPlate"></div>
-  <h1>ברוכים הבאים ל-SmartPlate</h1>
-  <p class="sub">במה תרצו להמשיך?</p>
+<div class="popup-overlay">
+  <div class="popup-card">
+    <div class="logo"><img src="img/logo-basic.png" alt="Smart Plate Basic"></div>
+    <h1>ברוכים הבאים ל-SmartPlate</h1>
+    <p class="sub">במה תרצו להמשיך?</p>
 
-  <div class="choices">
-    <a class="choice consulting" href="/consulting-services.html">
-      <div class="choice-icon">💼</div>
-      <h2>אני מעוניין בשירותי ייעוץ עסקי למסעדנים</h2>
-      <p>ייעוץ עסקי ותפעולי למסעדות ובתי קפה — Food Cost, Labor Cost, הנדסת תפריט ועוד.</p>
-      <span class="go">המשך לעמוד השירותים ←</span>
-    </a>
+    <div class="choices">
+      <a class="choice consulting" href="/consulting-services.html">
+        <img class="watermark" src="img/logo-basic.png" alt="">
+        <div class="choice-icon">💼</div>
+        <h2>אני מעוניין בשירותי ייעוץ עסקי למסעדנים</h2>
+        <p>ייעוץ עסקי ותפעולי למסעדות ובתי קפה — Food Cost, Labor Cost, הנדסת תפריט ועוד.</p>
+        <span class="go">המשך לעמוד השירותים ←</span>
+      </a>
 
-    <a class="choice app" href="https://app.foodcostapp.com">
-      <div class="choice-icon">📊</div>
-      <h2>המשך לאפליקציית Smart Plate Basic</h2>
-      <p>כניסה למשרד האחורי — ניהול עלויות מזון, שכר, מלאי וספקים.</p>
-      <span class="go">כניסה לאפליקציה ←</span>
-    </a>
+      <a class="choice app" href="https://app.foodcostapp.com">
+        <img class="watermark" src="img/logo-basic.png" alt="">
+        <div class="choice-icon">📊</div>
+        <h2>המשך לאפליקציית Smart Plate Basic</h2>
+        <p>כניסה למשרד האחורי — ניהול עלויות מזון, שכר, מלאי וספקים.</p>
+        <span class="go">כניסה לאפליקציה ←</span>
+      </a>
+    </div>
+
+    <footer>SmartPlate © 2026</footer>
   </div>
-
-  <footer>SmartPlate © 2026</footer>
 </div>
 </body>
 </html>
