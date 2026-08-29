@@ -102,6 +102,17 @@ section{padding:60px 20px}
 .story-tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px}
 .story-tag{background:#f0fdf4;color:var(--teal);padding:3px 10px;border-radius:10px;font-size:12px;font-weight:600;border:1px solid #bbf7d0}
 
+.trust-band{background:var(--black);padding:44px 20px}
+.trust-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;max-width:1000px;margin:0 auto}
+.trust-item{text-align:center;color:var(--white)}
+.trust-num{font-size:34px;font-weight:800;color:var(--teal);display:block;margin-bottom:4px}
+.trust-label{font-size:13px;color:#ccc;font-weight:600}
+.featured-stories{background:var(--gray-bg);padding:70px 20px}
+.featured-stories .story-card{background:var(--white)}
+.featured-cta{text-align:center;margin-top:36px}
+@media(max-width:768px){.trust-grid{grid-template-columns:repeat(2,1fr)}.trust-num{font-size:26px}}
+
+
 .podcast-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:24px}
 .podcast-card{background:var(--white);border:1px solid var(--border);border-radius:12px;padding:0;overflow:hidden;transition:all .2s}
 .podcast-card:hover{border-color:var(--teal);box-shadow:0 4px 12px rgba(0,0,0,.08)}
@@ -1009,6 +1020,47 @@ footer{background:var(--black);color:var(--white);padding:40px 20px;margin-top:4
     <div class="clients-grid"><img src="img/client-gliss.png" alt="גליס" class="client-logo" loading="lazy"><img src="img/client-giraffe.jpeg" alt="GIRAFFE" class="client-logo" loading="lazy"><img src="img/client-undertree.jpg" alt="מתחת לעץ" class="client-logo" loading="lazy"><img src="img/client-billou.jpeg" alt="בילוי" class="client-logo" loading="lazy"><img src="img/client-benedict.jpeg" alt="Benedict" class="client-logo" loading="lazy"><img src="img/client-bahar6.png" alt="בהר6" class="client-logo" loading="lazy"><img src="img/client-bbb.png" alt="BBB" class="client-logo" loading="lazy"><img src="img/client-meshekbarzilay.jpg" alt="משק ברזילי" class="client-logo" loading="lazy"><img src="img/client-ninabianca.jpg" alt="Nina Bianca" class="client-logo" loading="lazy"><img src="img/client-bretonne.png" alt="ברטון קרפרי" class="client-logo" loading="lazy"><img src="img/client-aka.svg" alt="AKA" class="client-logo" loading="lazy"><img src="img/client-gastro.png" alt="גסטרום" class="client-logo" loading="lazy"><img src="img/client-kulialma.png" alt="כולי עלמא" class="client-logo" loading="lazy"><img src="img/client-eats.svg" alt="Eats" class="client-logo" loading="lazy"></div>
   </div>
 </div>
+
+<!-- RECOMMENDATIONS / TRUST BAND -->
+<div class="trust-band">
+  <div class="trust-grid">
+    <div class="trust-item"><span class="trust-num">87%</span><span class="trust-label">אחוזי הצלחה</span></div>
+    <div class="trust-item"><span class="trust-num">500+</span><span class="trust-label">לקוחות מרוצים</span></div>
+    <div class="trust-item"><span class="trust-num">20</span><span class="trust-label">שנות ניסיון מאז 2006</span></div>
+    <div class="trust-item"><span class="trust-num">58</span><span class="trust-label">שנות ניסיון מצטבר של המייסדים</span></div>
+  </div>
+</div>
+
+<!-- FEATURED SUCCESS STORIES -->
+<section class="featured-stories" id="success-stories-preview">
+  <div class="container">
+    <h2 class="section-title">סיפורי הצלחה</h2>
+    <p class="section-intro">מקרים אמיתיים של לקוחות שעברו איתנו מהפסדים לרווחיות, מקריסה כלכלית להצלחה, וממחזור נמוך לצמיחה של מאות אחוזים.</p>
+    <div class="stories-grid">
+      <div class="story-card">
+        <span class="story-year">2018</span>
+        <h3 class="story-title">החזר השקעה מהיר בתוך פחות משנתיים</h3>
+        <p class="story-text">הקמת מסעדת שף חלבית דגים על 200 מ״ר. ההשקעה חזרה תוך פחות משנתיים, עם Food Cost + Labor Cost מתחת ל-60% תוך חצי שנה. המקום קיים כבר 7 שנים והפך למוסד באזור.</p>
+        <div class="story-tags"><span class="story-tag">Food Cost + Labor < 60%</span><span class="story-tag">ROI < שנתיים</span><span class="story-tag">7 שנות הצלחה</span></div>
+      </div>
+      <div class="story-card">
+        <span class="story-year">2021</span>
+        <h3 class="story-title">גידול של 300% בהכנסות וברווח — בזמן קורונה</h3>
+        <p class="story-text">לקחנו עסק שהיה בהפסד של 30 אלף ₪ בחודש ומחזור של 270 אלף ₪, שיפרנו משלוחים, שיווק ועלויות — והמחזור התייצב על 700 אלף ₪ עם רווח של 77 אלף ₪ בחודש.</p>
+        <div class="story-tags"><span class="story-tag">צמיחה 300%</span><span class="story-tag">רווח 77K ₪/חודש</span></div>
+      </div>
+      <div class="story-card">
+        <span class="story-year">2015</span>
+        <h3 class="story-title">23% רווחיות לאחר חילוץ מקריסה כלכלית</h3>
+        <p class="story-text">העסק היה בפשיטת רגל וסגור חודשיים. תוך חצי שנה הגענו ל-65% Food Cost + Labor Cost, תוך שנה ירדנו ל-57%, ובחודשים החזקים הגענו ל-23% רווחיות על המחזור.</p>
+        <div class="story-tags"><span class="story-tag">מפשיטת רגל להצלחה</span><span class="story-tag">רווחיות 23%</span></div>
+      </div>
+    </div>
+    <div class="featured-cta">
+      <a class="btn btn-primary" href="success-stories.html">לכל סיפורי ההצלחה ←</a>
+    </div>
+  </div>
+</section>
 
 <!-- SHORT HOMEPAGE CONTENT -->
 <section class="short-teasers" style="background:var(--gray-bg);padding:70px 20px"><div class="container">
