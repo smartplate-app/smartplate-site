@@ -12,29 +12,31 @@
 <link rel="dns-prefetch" href="https://app.foodcostapp.com">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-:root{--black:#000;--white:#fff;--teal:#0f766e;--teal-light:#2dd4bf;--gray-bg:#f9fafb;--gray-text:#555;--border:#e5e7eb}
+:root{--black:#000;--white:#fff;--teal:#0f766e;--teal-light:#2dd4bf;--gray-bg:#f3f4f6;--gray-text:#555;--border:#e5e7eb}
 body{font-family:'Segoe UI',system-ui,-apple-system,sans-serif;background:var(--gray-bg);color:#111827;line-height:1.6;min-height:100vh;display:flex;align-items:center;justify-content:center;padding:24px;direction:rtl;text-align:right}
-.wrap{max-width:760px;width:100%;text-align:right;direction:rtl}
-.logo{text-align:center;margin-bottom:28px}
-.logo img{height:56px;width:auto;display:inline-block}
+
+.popup-card{max-width:780px;width:100%;background:var(--white);border-radius:20px;box-shadow:0 20px 60px rgba(0,0,0,.15);padding:44px 40px;text-align:right;direction:rtl;border:1px solid var(--border)}
+
+.logo{text-align:center;margin-bottom:22px}
+.logo img{height:60px;width:auto;display:inline-block;border-radius:10px}
 h1{text-align:center;font-size:26px;font-weight:800;color:#111827;margin-bottom:10px;direction:rtl}
-.sub{text-align:center;color:var(--gray-text);font-size:15px;margin-bottom:36px;direction:rtl}
+.sub{text-align:center;color:var(--gray-text);font-size:15px;margin-bottom:34px;direction:rtl}
 .choices{display:grid;grid-template-columns:1fr 1fr;gap:20px}
-@media (max-width:640px){.choices{grid-template-columns:1fr}}
-.choice{display:block;background:var(--white);border:2px solid var(--border);border-radius:16px;padding:32px 24px;text-decoration:none;color:inherit;transition:all .2s;text-align:right;direction:rtl}
+@media (max-width:640px){.choices{grid-template-columns:1fr}.popup-card{padding:32px 22px}}
+.choice{display:block;background:var(--white);border:2px solid var(--border);border-radius:16px;padding:28px 22px;text-decoration:none;color:inherit;transition:all .2s;text-align:right;direction:rtl}
 .choice:hover{border-color:var(--teal);box-shadow:0 8px 24px rgba(15,118,110,.12);transform:translateY(-2px)}
 .choice-icon{width:52px;height:52px;border-radius:12px;background:var(--gray-bg);display:flex;align-items:center;justify-content:center;font-size:24px;margin-bottom:18px;margin-right:0;margin-left:auto}
 .choice.consulting .choice-icon{background:#f0fdfa;color:var(--teal)}
 .choice.app .choice-icon{background:#f3f4f6;color:#111827}
-.choice h2{font-size:18px;font-weight:800;margin-bottom:8px;text-align:right;direction:rtl}
-.choice p{font-size:14px;color:var(--gray-text);margin-bottom:18px;text-align:right;direction:rtl}
+.choice h2{font-size:17px;font-weight:800;margin-bottom:8px;text-align:right;direction:rtl}
+.choice p{font-size:14px;color:var(--gray-text);margin-bottom:16px;text-align:right;direction:rtl}
 .choice .go{display:inline-flex;align-items:center;gap:6px;font-size:14px;font-weight:700;color:var(--teal)}
 .choice.app .go{color:#111827}
-footer{text-align:center;margin-top:32px;font-size:12px;color:#9ca3af;direction:rtl}
+footer{text-align:center;margin-top:28px;font-size:12px;color:#9ca3af;direction:rtl}
 </style>
 </head>
 <body>
-<div class="wrap">
+<div class="popup-card">
   <div class="logo"><img src="img/logo.jpeg" alt="SmartPlate"></div>
   <h1>ברוכים הבאים ל-SmartPlate</h1>
   <p class="sub">במה תרצו להמשיך?</p>
