@@ -1,16 +1,61 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="he" dir="rtl">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SmartPlate | במה תרצו להמשיך?</title>
+<meta name="description" content="SmartPlate — בחרו אם אתם מעוניינים בשירותי ייעוץ עסקי למסעדנים או להמשיך לאפליקציית Smart Plate Basic.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://smartplatebasic.com/">
+<link rel="icon" type="image/jpeg" href="img/logo.jpeg">
 <link rel="preconnect" href="https://app.foodcostapp.com" crossorigin>
 <link rel="dns-prefetch" href="https://app.foodcostapp.com">
-<meta http-equiv="refresh" content="0; url=https://app.foodcostapp.com">
-<title>משרד אחורי | SmartPlate</title>
-<meta name="description" content="מעביר אותך למשרד אחורי של SmartPlate">
-<style>body{font-family:Arial,Helvetica,sans-serif;display:flex;align-items:center;justify-content:center;height:100vh;margin:0;background:#0b1220;color:#fff;text-align:center}a{color:#2dd4bf;font-weight:700;text-decoration:none}</style>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--black:#000;--white:#fff;--teal:#0f766e;--teal-light:#2dd4bf;--gray-bg:#f9fafb;--gray-text:#555;--border:#e5e7eb}
+body{font-family:'Segoe UI',system-ui,-apple-system,sans-serif;background:var(--gray-bg);color:#111827;line-height:1.6;min-height:100vh;display:flex;align-items:center;justify-content:center;padding:24px;direction:rtl;text-align:right}
+.wrap{max-width:760px;width:100%;text-align:right;direction:rtl}
+.logo{text-align:center;margin-bottom:28px}
+.logo img{height:56px;width:auto;display:inline-block}
+h1{text-align:center;font-size:26px;font-weight:800;color:#111827;margin-bottom:10px;direction:rtl}
+.sub{text-align:center;color:var(--gray-text);font-size:15px;margin-bottom:36px;direction:rtl}
+.choices{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+@media (max-width:640px){.choices{grid-template-columns:1fr}}
+.choice{display:block;background:var(--white);border:2px solid var(--border);border-radius:16px;padding:32px 24px;text-decoration:none;color:inherit;transition:all .2s;text-align:right;direction:rtl}
+.choice:hover{border-color:var(--teal);box-shadow:0 8px 24px rgba(15,118,110,.12);transform:translateY(-2px)}
+.choice-icon{width:52px;height:52px;border-radius:12px;background:var(--gray-bg);display:flex;align-items:center;justify-content:center;font-size:24px;margin-bottom:18px;margin-right:0;margin-left:auto}
+.choice.consulting .choice-icon{background:#f0fdfa;color:var(--teal)}
+.choice.app .choice-icon{background:#f3f4f6;color:#111827}
+.choice h2{font-size:18px;font-weight:800;margin-bottom:8px;text-align:right;direction:rtl}
+.choice p{font-size:14px;color:var(--gray-text);margin-bottom:18px;text-align:right;direction:rtl}
+.choice .go{display:inline-flex;align-items:center;gap:6px;font-size:14px;font-weight:700;color:var(--teal)}
+.choice.app .go{color:#111827}
+footer{text-align:center;margin-top:32px;font-size:12px;color:#9ca3af;direction:rtl}
+</style>
 </head>
 <body>
-<p>מעביר אותך למשרד אחורי... אם לא הועברת אוטומטית, <a href="https://app.foodcostapp.com">לחצו כאן</a>.</p>
+<div class="wrap">
+  <div class="logo"><img src="img/logo.jpeg" alt="SmartPlate"></div>
+  <h1>ברוכים הבאים ל-SmartPlate</h1>
+  <p class="sub">במה תרצו להמשיך?</p>
+
+  <div class="choices">
+    <a class="choice consulting" href="/consulting-services.html">
+      <div class="choice-icon">💼</div>
+      <h2>אני מעוניין בשירותי ייעוץ עסקי למסעדנים</h2>
+      <p>ייעוץ עסקי ותפעולי למסעדות ובתי קפה — Food Cost, Labor Cost, הנדסת תפריט ועוד.</p>
+      <span class="go">המשך לעמוד השירותים ←</span>
+    </a>
+
+    <a class="choice app" href="https://app.foodcostapp.com">
+      <div class="choice-icon">📊</div>
+      <h2>המשך לאפליקציית Smart Plate Basic</h2>
+      <p>כניסה למשרד האחורי — ניהול עלויות מזון, שכר, מלאי וספקים.</p>
+      <span class="go">כניסה לאפליקציה ←</span>
+    </a>
+  </div>
+
+  <footer>SmartPlate © 2026</footer>
+</div>
 </body>
 </html>
