@@ -225,7 +225,7 @@ footer{background:var(--black);color:var(--white);padding:40px 20px;margin-top:4
 
 
 /* Hamburger menu — pure CSS, no JS */
-.hamburger-toggle{display:none}
+
 .hamburger-btn{display:none;cursor:pointer;flex-direction:column;justify-content:center;gap:5px;width:44px;height:44px;padding:8px;z-index:300}
 .hamburger-btn span{display:block;width:24px;height:3px;background:#000;border-radius:2px;transition:all .3s ease}
 .hamburger-btn span:nth-child(1){margin-right:auto}
@@ -236,11 +236,11 @@ footer{background:var(--black);color:var(--white);padding:40px 20px;margin-top:4
 .mobile-sidebar .btn-primary{color:var(--white)!important}
 .mobile-sidebar .btn-green{color:var(--white)!important}
 .mobile-overlay{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.4);z-index:240;opacity:0;pointer-events:none;transition:opacity .3s ease}
-.hamburger-toggle:checked ~ .mobile-sidebar{right:0}
-.hamburger-toggle:checked ~ .mobile-overlay{opacity:1;pointer-events:auto}
-.hamburger-toggle:checked ~ label .hamburger-btn span:nth-child(1){transform:translateY(8px) rotate(45deg)}
-.hamburger-toggle:checked ~ label .hamburger-btn span:nth-child(2){opacity:0}
-.hamburger-toggle:checked ~ label .hamburger-btn span:nth-child(3){transform:translateY(-8px) rotate(-45deg)}
+.mobile-sidebar:target{right:0}
+.mobile-sidebar:target ~ .mobile-overlay{opacity:1;pointer-events:auto}
+
+
+
 .mobile-close{position:absolute;top:20px;left:20px;font-size:24px;cursor:pointer;color:#999;width:44px;height:44px;display:flex;align-items:center;justify-content:center}
 
 /* Area served */
@@ -960,7 +960,17 @@ footer{background:var(--black);color:var(--white);padding:40px 20px;margin-top:4
 }
 </script>
 <!-- ===== END STRUCTURED DATA ===== -->
-<style id="language-switcher-css">.language-switcher{display:inline-block;position:relative;margin-inline-start:8px;direction:ltr}.language-switcher summary{list-style:none;cursor:pointer;border:1px solid #d1d5db;border-radius:7px;padding:4px 9px;background:#fff;font-size:13px;font-weight:700}.language-switcher summary::-webkit-details-marker{display:none}.language-switcher-menu{position:absolute;right:0;top:34px;z-index:200;background:#fff;border:1px solid #d1d5db;border-radius:8px;box-shadow:0 8px 22px rgba(0,0,0,.12);min-width:125px;padding:5px;text-align:left}.language-switcher-menu a{display:block;padding:6px 8px;border-radius:5px;color:#111827!important;text-decoration:none!important}.language-switcher-menu a:hover{background:#f3f4f6;color:#0f766e!important}@media(max-width:768px){.language-switcher{margin-top:6px}.language-switcher-menu{left:0;right:auto}}}</style></head>
+<style id="language-switcher-css">.language-switcher{display:inline-block;position:relative;margin-inline-start:8px;direction:ltr}.language-switcher summary{list-style:none;cursor:pointer;border:1px solid #d1d5db;border-radius:7px;padding:4px 9px;background:#fff;font-size:13px;font-weight:700}.language-switcher summary::-webkit-details-marker{display:none}.language-switcher-menu{position:absolute;right:0;top:34px;z-index:200;background:#fff;border:1px solid #d1d5db;border-radius:8px;box-shadow:0 8px 22px rgba(0,0,0,.12);min-width:125px;padding:5px;text-align:left}.language-switcher-menu a{display:block;padding:6px 8px;border-radius:5px;color:#111827!important;text-decoration:none!important}.language-switcher-menu a:hover{background:#f3f4f6;color:#0f766e!important}@media(max-width:768px){.language-switcher{margin-top:6px}.language-switcher-menu{left:0;right:auto}}}
+</style><style id="mobile-header-final">
+/* Hebrew main page, phones: header not pinned, menu closed on load, closes after choosing a page. Pure CSS, no JS. */
+.mobile-close{display:none}
+@media(max-width:768px){
+  nav{position:static!important;backdrop-filter:none!important}
+  .mobile-close{display:block!important;font-size:24px;padding:6px 0;border:0!important;text-align:left}
+  .mobile-overlay{display:block!important}
+}
+@media(min-width:769px){.mobile-sidebar,.mobile-overlay,.hamburger-btn{display:none!important}}
+</style></head>
 <body>
 
 <!-- NAV -->
@@ -971,7 +981,7 @@ footer{background:var(--black);color:var(--white);padding:40px 20px;margin-top:4
       <span style="font-size:16px;font-weight:700">SmartPlate</span>
     </a>
     <div class="nav-links"><a href="/restaurant-consulting/">ייעוץ למסעדות</a><a href="/restaurant-advisor/">יועץ מסעדות</a>
-      <a href="consulting-services.html">ראשי</a>
+      <a href="#">ראשי</a>
       <a href="success-stories.html">סיפורי הצלחה</a>
       <a href="services.html">שירותים</a>
       <a href="pricing.html">מסלולי ליווי</a>
@@ -984,11 +994,9 @@ footer{background:var(--black);color:var(--white);padding:40px 20px;margin-top:4
       <a href="tel:0525838483" class="btn btn-primary">התקשרו עכשיו</a>
     </div>
     <!-- Hamburger (mobile only) -->
-    <input type="checkbox" id="hamburger" class="hamburger-toggle">
-    <label for="hamburger" class="hamburger-btn"><span></span><span></span><span></span></label>
-    <div class="mobile-overlay"></div>
-    <aside class="mobile-sidebar">
-      <label for="hamburger" class="mobile-close">✕</label>
+    <a href="#site-menu" class="hamburger-btn" aria-label="תפריט"><span></span><span></span><span></span></a>
+    <aside class="mobile-sidebar" id="site-menu">
+      <a href="#" class="mobile-close" aria-label="סגירה">✕</a>
       <a href="consulting-services.html">ראשי</a>
       <a href="success-stories.html">סיפורי הצלחה</a>
       <a href="services.html">שירותים</a>
@@ -1001,6 +1009,7 @@ footer{background:var(--black);color:var(--white);padding:40px 20px;margin-top:4
         <a href="tel:0525838483" class="btn btn-primary" style="text-align:center">התקשרו עכשיו</a>
       </div>
     </aside>
+    <a href="#" class="mobile-overlay" aria-label="סגירת תפריט"></a>
   </div>
 </nav>
 
